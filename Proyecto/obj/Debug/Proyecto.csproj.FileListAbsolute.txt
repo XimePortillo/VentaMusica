@@ -68,3 +68,4 @@ C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Pr
 C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
 C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.exe
 C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Pago.resources

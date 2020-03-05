@@ -64,11 +64,25 @@ namespace Proyecto
         }
         public void Agregar(Music m)
         {
-            Prod.Add(m);
+            bool existe = Prod.Any(x => x.Nombre == m.Nombre);
+            if (!existe)
+                Prod.Add(m);
+            else
+            {
+                int id = Prod.FindIndex(x => x.Nombre == m.Nombre);
+                Prod[id].Cantidad += m.Cantidad;
+            }
         }
         public void Agregar(Videogame v)
         {
-            Prod.Add(v);
+            bool existe = Prod.Any(x => x.Nombre == v.Nombre);
+            if (!existe)
+                Prod.Add(v);
+            else
+            {
+                int id = Prod.FindIndex(x => x.Nombre == v.Nombre);
+                Prod[id].Cantidad += v.Cantidad;
+            }
         }
 
 
@@ -84,12 +98,10 @@ namespace Proyecto
         {
             Prod.RemoveAt(indexL);
         }
-        /*public string Excecute(List<Productos> producto)
+        public void Pagar()
         {
-            string articulos = "Articulo      Precio";
-            foreach (var elemento in producto)
-                articulos += (Convert.ToString(elemento.Nombre) + Convert.ToString(elemento.Precio));
-            return articulos;
-        }*/
+            Prod = new List<Productos>();
+
+        }
     }
 }

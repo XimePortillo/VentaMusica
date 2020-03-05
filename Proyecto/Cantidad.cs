@@ -74,6 +74,11 @@ namespace Proyecto
                     vgame.Cantidad = cant;
                     ven.Agregar(vgame);
                 }
+                Form existe = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "Carrito").SingleOrDefault<Form>();
+                if (existe != null)
+                {
+                    
+                }
             }
             Visible = false;
             if (cant > 0)

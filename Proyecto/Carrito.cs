@@ -16,33 +16,35 @@ namespace Proyecto
         public static List<int> quantity;
         private int cantidad;
         private Venta aux;
+        private float total = 0;
         //private Venta v;
         public Carrito(ref Venta v)
         {
             aux = v;
             InitializeComponent();
-            List<Productos> items = v.ObtenerProd();
-            List<int> quantity = v.ObtenerCant();
-
-            int valor = 0;
+            Llenar();
+        }
+        public void Llenar()
+        {
+            if (dataGridView1.Rows.Count != 0)
+            {
+                dataGridView1.Rows.Clear();
+            }
+            List<Productos> items = aux.ObtenerProd();
+            List<int> quantity = aux.ObtenerCant();
+            
             for (int i = 0; i < items.Count; i++)
             {
+                total += ((items[i].Precio) * (items[i].Cantidad));
                 string[] row = new string[] { items[i].Nombre, Convert.ToString(items[i].Precio), Convert.ToString(items[i].Cantidad), Convert.ToString((items[i].Precio) * (items[i].Cantidad)) };
                 dataGridView1.Rows.Add(row);
             }
-            string s="";
-            for (int i = 0; i < items.Count; i++)
-            {
-                valor = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                //quantity[i] = valor;
-                s = s + " " + items[i].Nombre + " " + items[i].Precio + " " + items[i].Cantidad;
-            }
+            string s = "Total =" + total.ToString();
             label2.Text = s;
             this.dataGridView1.Columns[0].ReadOnly = true;
             this.dataGridView1.Columns[1].ReadOnly = true;
             this.dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
-
         }
 
         private void Carrito_Load(object sender, EventArgs e)
@@ -68,7 +70,8 @@ namespace Proyecto
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Pago p = new Pago(total,ref aux);
+            p.Visible = true;
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -90,6 +93,7 @@ namespace Proyecto
             {
                 cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                 aux.Editar(e.RowIndex, cantidad);
+                Llenar();
             }
             catch (Exception)
             {
