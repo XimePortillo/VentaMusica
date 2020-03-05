@@ -23,20 +23,15 @@ namespace Proyecto
             InitializeComponent();
             List<Productos> items = v.ObtenerProd();
             List<int> quantity = v.ObtenerCant();
-
+            float total=0;
             int valor = 0;
             for (int i = 0; i < items.Count; i++)
             {
+                total += ((items[i].Precio) * (items[i].Cantidad));
                 string[] row = new string[] { items[i].Nombre, Convert.ToString(items[i].Precio), Convert.ToString(items[i].Cantidad), Convert.ToString((items[i].Precio) * (items[i].Cantidad)) };
                 dataGridView1.Rows.Add(row);
             }
-            string s="";
-            for (int i = 0; i < items.Count; i++)
-            {
-                valor = Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value.ToString());
-                //quantity[i] = valor;
-                s = s + " " + items[i].Nombre + " " + items[i].Precio + " " + items[i].Cantidad;
-            }
+            string s="Total ="+total.ToString();
             label2.Text = s;
             this.dataGridView1.Columns[0].ReadOnly = true;
             this.dataGridView1.Columns[1].ReadOnly = true;
