@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,12 +41,13 @@ namespace Proyecto
             this.dataGridView1.Columns[0].ReadOnly = true;
             this.dataGridView1.Columns[1].ReadOnly = true;
             this.dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
 
         }
 
         private void Carrito_Load(object sender, EventArgs e)
         {
-            
+             
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -103,7 +104,7 @@ namespace Proyecto
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
