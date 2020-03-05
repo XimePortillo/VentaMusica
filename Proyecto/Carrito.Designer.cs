@@ -1,4 +1,4 @@
-﻿namespace Proyecto
+namespace Proyecto
 {
     partial class Carrito
     {
