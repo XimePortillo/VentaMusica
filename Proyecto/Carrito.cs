@@ -21,23 +21,29 @@ namespace Proyecto
         {
             aux = v;
             InitializeComponent();
-            List<Productos> items = v.ObtenerProd();
-            List<int> quantity = v.ObtenerCant();
-            float total=0;
-            int valor = 0;
+            Llenar();
+        }
+        public void Llenar()
+        {
+            if (dataGridView1.Rows.Count != 0)
+            {
+                dataGridView1.Rows.Clear();
+            }
+            List<Productos> items = aux.ObtenerProd();
+            List<int> quantity = aux.ObtenerCant();
+            float total = 0;
             for (int i = 0; i < items.Count; i++)
             {
                 total += ((items[i].Precio) * (items[i].Cantidad));
                 string[] row = new string[] { items[i].Nombre, Convert.ToString(items[i].Precio), Convert.ToString(items[i].Cantidad), Convert.ToString((items[i].Precio) * (items[i].Cantidad)) };
                 dataGridView1.Rows.Add(row);
             }
-            string s="Total ="+total.ToString();
+            string s = "Total =" + total.ToString();
             label2.Text = s;
             this.dataGridView1.Columns[0].ReadOnly = true;
             this.dataGridView1.Columns[1].ReadOnly = true;
             this.dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
-
         }
 
         private void Carrito_Load(object sender, EventArgs e)
@@ -85,6 +91,7 @@ namespace Proyecto
             {
                 cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                 aux.Editar(e.RowIndex, cantidad);
+                Llenar();
             }
             catch (Exception)
             {
