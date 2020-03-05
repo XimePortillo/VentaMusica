@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,7 +80,10 @@ namespace Proyecto
         {
             Prod[indexL].Cantidad = cantidad;
         }
-
+        public void QuitarProducto(int indexL)
+        {
+            Prod.RemoveAt(indexL);
+        }
         /*public string Excecute(List<Productos> producto)
         {
             string articulos = "Articulo      Precio";
