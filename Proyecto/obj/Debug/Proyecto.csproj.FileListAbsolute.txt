@@ -54,3 +54,17 @@ C:\Users\karyn\OneDrive\Escritorio\Proyecto\Proyecto\obj\Debug\Proyecto.Videojue
 C:\Users\karyn\OneDrive\Escritorio\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
 C:\Users\karyn\OneDrive\Escritorio\Proyecto\Proyecto\obj\Debug\Proyecto.exe
 C:\Users\karyn\OneDrive\Escritorio\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.csprojAssemblyReference.cache
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Cantidad.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Carrito.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Form1.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Musica.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Peliculas.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.Videojuegos.resources
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.cache
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\iosu9\Documents\Proyecto\XimePortillo\VentaMusica\Proyecto\obj\Debug\Proyecto.pdb

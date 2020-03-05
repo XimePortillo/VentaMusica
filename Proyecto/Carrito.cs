@@ -41,12 +41,13 @@ namespace Proyecto
             this.dataGridView1.Columns[0].ReadOnly = true;
             this.dataGridView1.Columns[1].ReadOnly = true;
             this.dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
 
         }
 
         private void Carrito_Load(object sender, EventArgs e)
         {
-            
+             
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,12 +72,11 @@ namespace Proyecto
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5; i++)
+            foreach(DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                string[] row = new string[] { items[i].Nombre, Convert.ToString(items[i].Precio), Convert.ToString(quantity[i]), Convert.ToString((items[i].Precio) * (quantity[i])) };
-                dataGridView1.Rows.Add(row);
+                aux.QuitarProducto(row.Index);
+                dataGridView1.Rows.RemoveAt(row.Index);
             }
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -90,9 +90,6 @@ namespace Proyecto
             {
                 cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
                 aux.Editar(e.RowIndex, cantidad);
-                //items[e.RowIndex].Cantidad = cantidad;
-                MessageBox.Show("");
-                //dataGridView1.Rows[e.RowIndex].Cells[3].Value = (items[e.RowIndex].Precio * items[e.RowIndex].Cantidad).ToString();
             }
             catch (Exception)
             {
@@ -103,7 +100,7 @@ namespace Proyecto
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            cantidad = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
